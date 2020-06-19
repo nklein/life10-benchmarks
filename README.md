@@ -11,6 +11,7 @@ This is a straightforward implementation of the [Game of Life][0] rules in 10 pr
   * [Tcl][7] &mdash; [life.tcl](life.tcl)
   * [Lua][8] &mdash; [life.lua](life.lua)
   * [Scheme][9] (at least R5RS and later) &mdash; [life.scm](life.scm)
+  * [Common Lisp][10] (CCL or SBCL) &mdash; [life.lisp](life.lisp)
   * and my own programming language called [MANOOL](https://manool.org) &mdash; [life.mnl](life.mnl)
 
 The program simply displays an initial configuration and then the configuration after _G_ generations and exits. The grid (board) dimensions are given by
@@ -94,6 +95,14 @@ Examples of command line to run:
 
       csc -C -O3 life.scm && time ./life; rm -f life
 
+* Common Lisp:
+
+      ccl  --load life.lisp --eval '(make-exe)' ; time ./life-ccl.exe ; rm -f ./life-ccl.exe
+
+  or
+
+      sbcl --load life.lisp --eval '(make-exe)' ; time ./life-sbcl.exe; rm -f ./life-sbcl.exe
+
 * MANOOL:
 
       time MNL_PATH=~/manool/build/lib ~/manool/build/mnlexec life.mnl
@@ -116,3 +125,4 @@ Have fun! &mdash; *[rusini](https://github.com/rusini)* &mdash; info@manool.org
 [7]: https://en.wikipedia.org/wiki/Tcl
 [8]: https://en.wikipedia.org/wiki/Lua_(programming_language)
 [9]: https://en.wikipedia.org/wiki/Scheme_(programming_language)
+[10]: https://en.wikipedia.org/wiki/Common_Lisp
