@@ -7,7 +7,7 @@
 (defconstant +g+ 66000)
 
 (deftype element-type () '(unsigned-byte 8))
-(deftype array-type () `(array element-type (,+n+ ,+m+)))
+(deftype array-type () `(simple-array element-type (,+n+ ,+m+)))
 
 (declaim (ftype (function (array-type fixnum fixnum) element-type) aeref)
          (inline aeref))
